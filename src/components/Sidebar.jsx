@@ -7,12 +7,12 @@ function Sidebar() {
   return (
     <nav>
       <div>
-        <img src={dashboard} alt="bagy-logo" />
+        <img src={dashboard} alt="Logo da Bagy" />
         <span>Dashboard Bagy</span>
       </div>
       <ul>
         {SidebarItems.map((link) => (
-          <Link to={`${link.path}`}>
+          <Link to={`${link.path}`} key={link.path}>
             <li>{link.baseName}</li>
           </Link>
         ))}

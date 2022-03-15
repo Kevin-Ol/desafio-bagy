@@ -13,10 +13,12 @@ import Products from './Products';
 import Sales from './Sales';
 import Store from './Store';
 import Sidebar from '../components/Sidebar';
+import Header from '../components/Header';
 
 function Dashboard() {
   return (
     <>
+      <Header />
       <Sidebar />
       <Routes>
         <Route path="/" element={<Navigate to="/dashboard/main" />} />
