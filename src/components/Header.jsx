@@ -3,9 +3,10 @@ import {
   useParams,
 } from 'react-router-dom';
 import SidebarItems from '../helpers/SidebarItems';
-import notifications from '../icons/notifications.svg';
-import search from '../icons/search.svg';
+import { ReactComponent as Notifications } from '../icons/notifications.svg';
+import { ReactComponent as Search } from '../icons/search.svg';
 import user from '../icons/user.png';
+import '../styles/Header.scss';
 
 function Header() {
   const currentRoute = useParams()['*'];
@@ -15,11 +16,15 @@ function Header() {
     <header>
       <h1>{currentPage?.baseName}</h1>
       <div>
-        <img src={search} alt="Ícone de pesquisa" />
-        <img src={notifications} alt="Ícone de notificações" />
+        <div>
+          <Search />
+          <Notifications />
+        </div>
+        <div>
+          <span>Matheus Borges</span>
+          <img src={user} alt="Imagem do usuário" />
+        </div>
       </div>
-      <span>Matheus Borges</span>
-      <img src={user} alt="Imagem do usuário" />
     </header>
   );
 }

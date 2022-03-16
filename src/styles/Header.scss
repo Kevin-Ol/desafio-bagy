@@ -1,0 +1,55 @@
+@use 'variables';
+
+header {
+  align-items: center;
+  color: variables.$main-text;
+  display: flex;
+  font-family: 'Mulish', sans-serif;
+  justify-content: space-around;
+  margin-top: 24px;
+
+  h1 {
+    font-size: 28px;
+    font-weight: 600;
+  }
+
+  div {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+
+    div:first-child{
+      margin-right: 64px;
+      width: 75px;
+
+      svg {
+        cursor: pointer;
+      }
+    }
+
+    div:last-child{
+      position: relative;
+      ::before {
+        content : "";
+        position: absolute;
+        left    : -32px;
+        bottom  : 20%;
+        height  : 60%;
+        width   : 1px;
+        border-left: 2px solid #DFE0EB;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+      }
+
+      span {
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  img {
+    border-radius: 50%;
+    margin-left: 16px;
+    width: 50px;
+  }
+}

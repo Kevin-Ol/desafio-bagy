@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 import NotFound from './pages/NotFound';
+import './App.scss';
 
 function App() {
   return (
