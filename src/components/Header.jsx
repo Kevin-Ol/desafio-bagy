@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  useParams,
-} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import SidebarItems from '../helpers/SidebarItems';
 import { ReactComponent as Notifications } from '../icons/notifications.svg';
 import { ReactComponent as Search } from '../icons/search.svg';

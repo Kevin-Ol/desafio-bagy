@@ -1,0 +1,62 @@
+@use 'variables';
+
+nav {
+  background-color: variables.$nav-bd;
+  color: variables.$nav-text;
+  grid-row-start: 1;
+  grid-row-end: -1;
+  height: 100vh;
+  
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      font-size: 18px;
+      font-weight: 700;
+      margin-left: 4px;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin-top: 32px;
+    
+    a {
+      color: inherit;
+      padding: 16px 32px 16px 32px;
+      text-decoration: none;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+    }
+    
+    svg {
+      margin-right: 8px;
+    }
+    
+    button {
+      background-color: inherit;
+      border: none;
+      color: inherit;
+      cursor: pointer;
+      font-size: inherit;
+      padding: 16px 32px 16px 32px;
+    }
+    
+    .selected {
+      background-color: variables.$nav-bd-selected;
+      border: 1px solid variables.$white;
+      border-left: 2px solid variables.$pink;
+      color: variables.$white;
+    }
+  }
+}

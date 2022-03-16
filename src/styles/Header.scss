@@ -4,8 +4,8 @@ header {
   align-items: center;
   color: variables.$main-text;
   display: flex;
-  font-family: 'Mulish', sans-serif;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0 32px;
   margin-top: 24px;
 
   h1 {

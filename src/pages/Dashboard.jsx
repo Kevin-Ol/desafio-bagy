@@ -17,9 +17,9 @@ import Header from '../components/Header';
 
 function Dashboard() {
   return (
-    <>
-      <Header />
+    <div className="dashboard-container">
       <Sidebar />
+      <Header />
       <Routes>
         <Route path="/" element={<Navigate to="/dashboard/main" />} />
         <Route path="config" element={<Configuration />} />
@@ -31,7 +31,7 @@ function Dashboard() {
         <Route path="stores" element={<Store />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </>
+    </div>
   );
 }
 

@@ -2,4 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Mulish', sans-serif;
+}
+
+.dashboard-container {
+  display:grid;
+  grid-template-columns: 20fr 80fr;
+  grid-template-rows: repeat(9, 10fr);
+}
+
+main {
+  grid-column-start: 2;
+  grid-column-end: -1;
 }
