@@ -8,7 +8,7 @@
 .dashboard-container {
   display:grid;
   grid-template-columns: 20fr 80fr;
-  grid-template-rows: repeat(9, 10fr);
+  grid-template-rows: 15% auto;
 }
 
 main {

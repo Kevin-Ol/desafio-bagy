@@ -125,7 +125,7 @@ module.exports = {
       product_name: 'Brincos',
       product_code: 23,
       unit_price: 29.9,
-      storeid: 1,
+      store_id: 1,
       date: new Date('2020-07-17'),
     },
     {
@@ -133,7 +133,7 @@ module.exports = {
       product_name: 'Sandália',
       product_code: 54,
       unit_price: 89.9,
-      storeid: 2,
+      store_id: 2,
       date: new Date('2020-07-17'),
     },
     {
@@ -141,7 +141,7 @@ module.exports = {
       product_name: 'Conjunto',
       product_code: 95,
       unit_price: 49.9,
-      storeid: 3,
+      store_id: 3,
       date: new Date('2020-07-17'),
     },
     {
@@ -149,7 +149,7 @@ module.exports = {
       product_name: 'Body',
       product_code: 77,
       unit_price: 19.9,
-      storeid: 4,
+      store_id: 4,
       date: new Date('2020-07-17'),
     },
   ],
