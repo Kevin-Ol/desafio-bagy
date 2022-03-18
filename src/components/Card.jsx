@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 function Card({
   title, text, currency, loading,
 }) {
+  const convertBRL = useCallback((price) => price.toLocaleString('pt-br', {
+    style: 'currency',
+    currency: 'BRL',
+  }), []);
+
   if (loading) {
     return (
       <div>
@@ -15,14 +20,9 @@ function Card({
   return (
     <div>
       <h2>{title}</h2>
-      {currency
-        ? (
-          parseFloat(text).toLocaleString('pt-br', {
-            style: 'currency',
-            currency: 'BRL',
-          })
-        )
-        : <p>{text}</p> }
+      <p>
+        {currency ? convertBRL(parseFloat(text)) : text }
+      </p>
     </div>
   );
 }
