@@ -23,6 +23,7 @@ const storeInfoQuery = (id) => `
     Store(id: ${id}) {
       name
       Products {
+        id
         product_name
         product_code
         unit_price
@@ -40,6 +41,7 @@ const storeInfoQuery = (id) => `
 export function StoresContextProvider({ children }) {
   const [user, setUser] = useState({});
   const [sells, setSells] = useState([]);
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -69,8 +71,18 @@ export function StoresContextProvider({ children }) {
 
       allSells.sort((a, b) => b.quantity - a.quantity);
 
+      const allProducts = storesData.reduce((acc, { Store }) => {
+        const storeProducts = Store.Products;
+        const productsWithName = storeProducts.map((product) => (
+          { store_name: Store.name, ...product }));
+        return [...acc, ...productsWithName];
+      }, []);
+
+      allProducts.sort((a, b) => (b.date > a.date ? 1 : -1));
+
       setUser(data.User);
       setSells(allSells);
+      setProducts(allProducts);
       setLoading(false);
     };
 
@@ -81,7 +93,8 @@ export function StoresContextProvider({ children }) {
     user,
     loading,
     sells,
-  }), [user, loading, sells]);
+    products,
+  }), [user, loading, sells, products]);
 
   return (
     <StoresContext.Provider value={value}>
