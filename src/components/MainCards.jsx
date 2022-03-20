@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from './Card';
 import UseStores from '../hooks/UseStores';
+import '../styles/MainCards.scss';
 
 function MainCards() {
   const { user, loading } = UseStores();
