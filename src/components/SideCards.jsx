@@ -5,15 +5,16 @@ import UseStores from '../hooks/UseStores';
 import '../styles/SideCards.scss';
 
 function SideCards() {
-  const { currentMonthRevenues, loading } = UseStores();
+  const {
+    currentMonthRevenues, storesNamesList, loading, changeStoreName, currentStoreName,
+  } = UseStores();
 
-  const storeOptions = ['Estilo Pri', 'Vilma Calçados', 'Mary Lingerie', 'Loja Belíssima'];
   const monthOptions = ['Julho', 'Junho'];
   const yearOptions = [2020, 2019];
 
   return (
     <section className="side-cards">
-      <SelectCard title="Loja" options={storeOptions} loading={loading} />
+      <SelectCard title="Loja" options={storesNamesList} handleChange={changeStoreName} loading={loading} value={currentStoreName} />
       <SelectCard title="Mês" options={monthOptions} loading={loading} />
       <SelectCard title="Ano" options={yearOptions} loading={loading} />
       <Card

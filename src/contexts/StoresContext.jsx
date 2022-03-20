@@ -1,5 +1,5 @@
 import React, {
-  createContext, useMemo, useEffect, useState,
+  createContext, useMemo, useEffect, useState, useCallback,
 } from 'react';
 import PropTypes from 'prop-types';
 import api from '../services/api';
@@ -16,7 +16,7 @@ const MAIN_INFO_QUERY = `{
   }
 }`;
 
-const stores = [4, 2, 1, 3];
+const storesIds = [1, 4, 2, 3];
 
 const storeInfoQuery = (id) => `
   {
@@ -43,6 +43,9 @@ export function StoresContextProvider({ children }) {
   const [user, setUser] = useState({});
   const [sells, setSells] = useState([]);
   const [products, setProducts] = useState([]);
+  const [stores, setStores] = useState([]);
+  const [storesNamesList, setStoresNamesList] = useState([]);
+  const [currentStoreName, setCurrentStoreName] = useState('');
   const [loading, setLoading] = useState(true);
   const [currentMonthRevenues, setCurrentMonthRevenues] = useState({});
   const [previousMonthRevenues, setPreviousMonthRevenues] = useState({});
@@ -56,7 +59,7 @@ export function StoresContextProvider({ children }) {
         },
       );
 
-      const storePromises = stores.map((store) => api.post(
+      const storePromises = storesIds.map((store) => api.post(
         '/',
         {
           query: storeInfoQuery(store),
@@ -83,8 +86,12 @@ export function StoresContextProvider({ children }) {
 
       allProducts.sort((a, b) => (b.date > a.date ? 1 : -1));
 
-      const currentStore = storesData.find(({ Store }) => Store.name === 'Estilo Pri').Store;
+      const storeNames = storesData.map(({ Store }) => Store.name);
+      const currentStore = storesData[0].Store;
 
+      setStoresNamesList(storeNames);
+      setStores(storesData);
+      setCurrentStoreName(storesData[0].Store.name);
       setCurrentMonthRevenues(currentStore.revenues['2020'].july);
       setPreviousMonthRevenues(currentStore.revenues['2020'].june);
       setUser(data.User);
@@ -96,6 +103,18 @@ export function StoresContextProvider({ children }) {
     fetch();
   }, []);
 
+  useEffect(() => {
+    if (stores.length) {
+      const store = stores.find(({ Store }) => Store.name === currentStoreName).Store;
+      setCurrentMonthRevenues(store.revenues['2020'].july);
+      setPreviousMonthRevenues(store.revenues['2020'].june);
+    }
+  }, [currentStoreName]);
+
+  const changeStoreName = useCallback(({ target }) => {
+    setCurrentStoreName(target.value);
+  }, []);
+
   const value = useMemo(() => ({
     user,
     loading,
@@ -103,7 +122,20 @@ export function StoresContextProvider({ children }) {
     products,
     currentMonthRevenues,
     previousMonthRevenues,
-  }), [user, loading, sells, products, currentMonthRevenues, previousMonthRevenues]);
+    storesNamesList,
+    currentStoreName,
+    changeStoreName,
+  }), [
+    user,
+    loading,
+    sells,
+    products,
+    currentMonthRevenues,
+    previousMonthRevenues,
+    storesNamesList,
+    currentStoreName,
+    changeStoreName,
+  ]);
 
   return (
     <StoresContext.Provider value={value}>

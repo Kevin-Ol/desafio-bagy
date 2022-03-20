@@ -859,7 +859,7 @@ module.exports = {
               },
               {
                 day: 13,
-                value: 328182,
+                value: 32818,
               },
               {
                 day: 14,
