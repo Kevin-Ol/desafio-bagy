@@ -1,0 +1,62 @@
+@use 'variables';
+
+.sells-table {
+  border: 1px solid variables.$card-border;
+  border-radius: 8px;
+  flex-basis: 0;
+  flex-grow: 1;
+
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 32px 20px 32px;
+
+    h2 {
+      color: variables.$main-text;
+      font-size: 16px;
+    }
+
+    p {
+      color: variables.$price-bg;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    select {
+      color: variables.$pink;
+      background: inherit;
+      border: none;
+      border-bottom: 1px solid variables.$pink;
+      font-size: 14px;
+      font-weight: 600;
+      height: fit-content;
+    }
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      display: grid;
+      grid-template-columns: 3fr 2fr 3fr;
+      gap: 32px;
+      padding: 22px 32px;
+      font-size: 14px;
+
+      span:first-child {
+        color: variables.$main-text;
+        font-weight: 600;
+      } 
+
+      span:not(:first-child) {
+        color: variables.$card-title;
+        text-align: right;
+      }
+    }
+
+    li:not(:last-child) {
+      border-bottom: 1px solid variables.$card-border;
+    }
+  }
+}

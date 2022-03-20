@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import UseStores from '../hooks/UseStores';
+import '../styles/SellsTable.scss';
 
 function SellsTable() {
   const { sells, loading } = UseStores();
@@ -21,14 +22,16 @@ function SellsTable() {
   }
 
   return (
-    <main>
+    <main className="sells-table">
       <div>
-        <h2>Total de Compras</h2>
-        <p>
-          Valor geral:
-          {' '}
-          {convertBRL(totalPrice)}
-        </p>
+        <div>
+          <h2>Total de Compras</h2>
+          <p>
+            Valor geral:
+            {' '}
+            {convertBRL(totalPrice)}
+          </p>
+        </div>
         <select value={period} onChange={({ target }) => setPeriod(target.value)}>
           <option value="weekly">Semanal</option>
           <option value="monthly">Mensal</option>

@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import UseStores from '../hooks/UseStores';
+import '../styles/ProductsTable.scss';
 
 function ProductsTable() {
   const { products, loading } = UseStores();
@@ -23,7 +24,7 @@ function ProductsTable() {
   }
 
   return (
-    <main>
+    <main className="products-table">
       <div>
         <span>Produto</span>
         <span>Loja</span>

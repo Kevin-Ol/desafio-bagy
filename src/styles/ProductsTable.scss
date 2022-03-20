@@ -1,0 +1,74 @@
+@use 'variables';
+ 
+.products-table{
+  border: 1px solid variables.$card-border;
+  border-radius: 8px;
+  flex-basis: 0;
+  flex-grow: 1;
+
+  div {
+    color: variables.$main-text;
+    display:grid;
+    grid-template-columns: 3fr 3fr 2fr 2fr;
+    gap: 16px;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 32px 32px 36px 32px;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: variables.$scrollbar-track;
+    border-radius: 20px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: variables.$pink;
+    border-radius: 20px;
+
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: variables.$darker-pink;
+  }
+
+  ul {
+    font-size: 14px;
+    list-style: none;
+    max-height: 240px;
+    overflow-y: scroll;
+
+    li {
+      color: variables.$products-text;
+      display:grid;
+      grid-template-columns: 3fr 3fr 2fr 2fr;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 32px;
+      font-weight: 600;
+
+      span:nth-child(3), span:nth-child(4) {
+        color: variables.$white;
+        text-align: center;
+        padding: 4px 8px;
+        border-radius: 8px;
+        font-weight: 700;
+      }
+
+      span:nth-child(3) {
+        background-color: variables.$price-bg;
+      }
+
+      span:nth-child(4) {
+        background-color: variables.$date-bg;
+      }
+    }
+
+    li:not(:last-child) {
+      border-bottom: 1px solid variables.$card-border;
+    }
+  }
+}

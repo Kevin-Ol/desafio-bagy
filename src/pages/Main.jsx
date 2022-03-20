@@ -16,8 +16,10 @@ function Main() {
           <Chart />
           <SideCards />
         </div>
-        <SellsTable />
-        <ProductsTable />
+        <div className="additional-info-container">
+          <SellsTable />
+          <ProductsTable />
+        </div>
       </StoresContextProvider>
     </main>
   );

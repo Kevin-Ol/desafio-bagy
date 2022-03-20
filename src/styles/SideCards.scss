@@ -7,14 +7,13 @@
   & > div {
     border-left: 1px solid variables.$card-border;
 
-    flex-basis: 0;
-    flex-grow: 1;
-    text-align: center;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex-basis: 0;
+    flex-grow: 1;
     gap: 6px;
+    text-align: center;
     padding: 0 56px;
 
     h2 {

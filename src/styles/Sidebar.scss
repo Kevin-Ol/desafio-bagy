@@ -5,7 +5,7 @@ nav {
   color: variables.$nav-text;
   grid-row-start: 1;
   grid-row-end: -1;
-  height: 100vh;
+  min-height: 100vh;
   
   > div {
     display: flex;

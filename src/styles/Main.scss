@@ -1,10 +1,16 @@
 @use 'variables';
 
-
-.chart-info-container{
+.chart-info-container {
   display: flex;
   width: fit-content;
   border: 1px solid variables.$card-border;
   border-radius: 8px;
   margin: 8px auto;
+}
+
+.additional-info-container {
+  display: flex;
+  justify-content: center;
+  margin: 56px 28px;
+  gap: 12px;
 }
