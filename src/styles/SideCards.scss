@@ -1,0 +1,53 @@
+@use 'variables';
+
+.side-cards {
+  display:flex;
+  flex-direction: column;
+
+  & > div {
+    border-left: 1px solid variables.$card-border;
+
+    flex-basis: 0;
+    flex-grow: 1;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    padding: 0 56px;
+
+    h2 {
+      color: variables.$card-title;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    p {
+      color: variables.$main-text;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    select {
+      border: none;
+      border-bottom: 1px solid black;
+      background: inherit;
+      text-align: center;
+      width: fit-content;
+      margin: 0 auto;
+      font-weight: 700;
+      font-size: 18px;
+    }
+  }
+
+  & > div:not(:last-child) {
+    border-bottom: 1px solid variables.$card-border;
+  }
+
+  & > div:last-child {
+    p {
+      color: variables.$card-analysis;
+    }
+  }
+}

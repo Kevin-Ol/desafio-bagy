@@ -3,23 +3,23 @@
 .main-cards {
   display:flex;
   gap: 24px;
+  margin: 0 24px;
 
   & > div {
     flex-basis: 0;
     flex-grow: 1;
     padding: 16px;
+    text-align: center;
 
     h2 {
       color: variables.$card-title;
       font-size: 18px;
-      text-align: center;
     }
 
     p {
       color: variables.$main-text;
       font-size: 28px;
       font-weight: 700;
-      text-align: center;
       margin-top: 8px;
     }
   }

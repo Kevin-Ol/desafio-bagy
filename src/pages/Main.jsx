@@ -5,13 +5,14 @@ import ProductsTable from '../components/ProductsTable';
 import Chart from '../components/Chart';
 import SideCards from '../components/SideCards';
 import { StoresContextProvider } from '../contexts/StoresContext';
+import '../styles/Main.scss';
 
 function Main() {
   return (
     <main>
       <StoresContextProvider>
         <MainCards />
-        <div>
+        <div className="chart-info-container">
           <Chart />
           <SideCards />
         </div>

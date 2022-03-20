@@ -2,17 +2,21 @@ import React from 'react';
 
 function ChartHeader() {
   return (
-    <div>
+    <div className="chart-header">
       <h2>Total de faturamento mensal</h2>
+
       <div>
-        <span>Julho 2020</span>
+        <span>JULHO 2020</span>
         <div>
-          <div />
-          <span>Esse mês</span>
-        </div>
-        <div>
-          <div />
-          <span>Mês passado</span>
+          <div className="current-month-line">
+            <div />
+            <span>Este mês</span>
+          </div>
+
+          <div className="previous-month-line">
+            <div />
+            <span>Mês passado</span>
+          </div>
         </div>
       </div>
     </div>

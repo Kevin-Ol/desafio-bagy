@@ -2,6 +2,7 @@ import React from 'react';
 import Card from './Card';
 import SelectCard from './SelectCard';
 import UseStores from '../hooks/UseStores';
+import '../styles/SideCards.scss';
 
 function SideCards() {
   const { currentMonthRevenues, loading } = UseStores();

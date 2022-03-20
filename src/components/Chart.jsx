@@ -5,6 +5,7 @@ import {
 import UseStores from '../hooks/UseStores';
 import ChartHeader from './ChartHeader';
 import CustomTooltip from './CustomTooltip';
+import '../styles/Chart.scss';
 
 function Chart() {
   const { currentMonthRevenues, previousMonthRevenues, loading } = UseStores();
@@ -30,14 +31,15 @@ function Chart() {
   }
 
   return (
-    <div>
+    <div className="chart-container">
       <ChartHeader />
       <AreaChart
-        width={800}
+        width={700}
         height={360}
         data={chartData}
         margin={{
-          top: 30,
+          top: 60,
+          right: -40,
         }}
       >
         <CartesianGrid stroke="#DDD" vertical={false} />
@@ -68,7 +70,7 @@ function Chart() {
           orientation="right"
           axisLine={false}
           type="number"
-          tick={{ fill: '#9FA2B4' }}
+          tick={{ fill: '#9FA2B4', fontSize: '16px' }}
           tickLine={false}
           strokeWidth={1}
           domain={[0, (dataMax) => (Math.floor(dataMax / 10000) * 10000 + 10000)]}

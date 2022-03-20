@@ -1,0 +1,50 @@
+@use 'variables';
+
+
+.chart-container {
+  padding: 32px;
+
+  h2 {
+    color: variables.$main-text;
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+
+  .chart-header > div, .chart-header > div > div{
+    color: variables.$card-title;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+  }
+
+  .chart-header > div > span {
+    font-weight: 700;
+  }
+
+  .current-month-line, .previous-month-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 32px;
+
+    div {
+      height: 3px;
+      width: 25px;
+      border-radius: 500px;
+      margin-right: 8px;
+    }
+  }
+
+  .current-month-line {
+    div {
+      background-color: variables.$pink;
+    }
+  }
+
+  .previous-month-line {
+    div {
+      background-color: #9FA2B4;
+    }
+  }
+}
