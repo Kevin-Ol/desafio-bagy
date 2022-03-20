@@ -22,6 +22,7 @@ const storeInfoQuery = (id) => `
   {
     Store(id: ${id}) {
       name
+      revenues
       Products {
         id
         product_name
@@ -43,6 +44,8 @@ export function StoresContextProvider({ children }) {
   const [sells, setSells] = useState([]);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [currentMonthRevenues, setCurrentMonthRevenues] = useState({});
+  const [previousMonthRevenues, setPreviousMonthRevenues] = useState({});
 
   useEffect(() => {
     const fetch = async () => {
@@ -80,6 +83,10 @@ export function StoresContextProvider({ children }) {
 
       allProducts.sort((a, b) => (b.date > a.date ? 1 : -1));
 
+      const currentStore = storesData.find(({ Store }) => Store.name === 'Estilo Pri').Store;
+
+      setCurrentMonthRevenues(currentStore.revenues['2020'].july);
+      setPreviousMonthRevenues(currentStore.revenues['2020'].june);
       setUser(data.User);
       setSells(allSells);
       setProducts(allProducts);
@@ -94,7 +101,9 @@ export function StoresContextProvider({ children }) {
     loading,
     sells,
     products,
-  }), [user, loading, sells, products]);
+    currentMonthRevenues,
+    previousMonthRevenues,
+  }), [user, loading, sells, products, currentMonthRevenues, previousMonthRevenues]);
 
   return (
     <StoresContext.Provider value={value}>
