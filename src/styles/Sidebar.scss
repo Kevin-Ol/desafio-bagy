@@ -1,7 +1,7 @@
 @use 'variables';
 
 nav {
-  background-color: variables.$nav-bd;
+  background-color: variables.$nav-bg;
   color: variables.$nav-text;
   grid-row-start: 1;
   grid-row-end: -1;
@@ -53,7 +53,7 @@ nav {
     }
     
     .selected {
-      background-color: variables.$nav-bd-selected;
+      background-color: variables.$nav-bg-selected;
       border: 1px solid variables.$white;
       border-left: 2px solid variables.$pink;
       color: variables.$white;
