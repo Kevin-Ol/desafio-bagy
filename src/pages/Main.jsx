@@ -3,6 +3,7 @@ import MainCards from '../components/MainCards';
 import SellsTable from '../components/SellsTable';
 import ProductsTable from '../components/ProductsTable';
 import Chart from '../components/Chart';
+import SideCards from '../components/SideCards';
 import { StoresContextProvider } from '../contexts/StoresContext';
 
 function Main() {
@@ -10,7 +11,10 @@ function Main() {
     <main>
       <StoresContextProvider>
         <MainCards />
-        <Chart />
+        <div>
+          <Chart />
+          <SideCards />
+        </div>
         <SellsTable />
         <ProductsTable />
       </StoresContextProvider>

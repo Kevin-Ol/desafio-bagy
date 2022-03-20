@@ -9,6 +9,18 @@ import CustomTooltip from './CustomTooltip';
 function Chart() {
   const { currentMonthRevenues, previousMonthRevenues, loading } = UseStores();
 
+  const chartData = useMemo(() => {
+    if (currentMonthRevenues.daily && previousMonthRevenues.daily) {
+      return currentMonthRevenues.daily.map((current, index) => ({
+        day: current.day,
+        current: current.value,
+        previous: previousMonthRevenues.daily[index].value,
+      }));
+    }
+
+    return [];
+  }, [currentMonthRevenues, previousMonthRevenues]);
+
   if (loading) {
     return (
       <div>
@@ -16,12 +28,6 @@ function Chart() {
       </div>
     );
   }
-
-  const chartData = useMemo(() => currentMonthRevenues.daily.map((current, index) => ({
-    day: current.day,
-    current: current.value,
-    previous: previousMonthRevenues.daily[index].value,
-  })));
 
   return (
     <div>
