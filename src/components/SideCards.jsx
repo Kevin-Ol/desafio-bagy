@@ -14,16 +14,44 @@ function SideCards() {
 
   return (
     <section className="side-cards">
-      <SelectCard title="Loja" options={storesNamesList} handleChange={changeStoreName} loading={loading} value={currentStoreName} />
-      <SelectCard title="Mês" options={monthOptions} loading={loading} />
-      <SelectCard title="Ano" options={yearOptions} loading={loading} />
+      <SelectCard
+        title="Loja"
+        options={storesNamesList}
+        handleChange={changeStoreName}
+        loading={loading}
+        value={currentStoreName}
+        titleTestId="store-title"
+        selectTestId="select-store"
+      />
+      <SelectCard
+        title="Mês"
+        options={monthOptions}
+        loading={loading}
+        titleTestId="month-title"
+        selectTestId="select-month"
+      />
+      <SelectCard
+        title="Ano"
+        options={yearOptions}
+        loading={loading}
+        titleTestId="year-title"
+        selectTestId="select-year"
+      />
       <Card
         title="Total de faturamento"
         text={currentMonthRevenues.total}
         currency
         loading={loading}
+        titleTestId="store-revenues-title"
+        textTestId="store-revenues-value"
       />
-      <Card title="Análise comparativa" text="Positivo" loading={loading} />
+      <Card
+        title="Análise comparativa"
+        text="Positivo"
+        loading={loading}
+        titleTestId="analysis-title"
+        textTestId="analysis-text"
+      />
     </section>
   );
 }

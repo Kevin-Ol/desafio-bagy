@@ -13,7 +13,7 @@ function MainCards() {
         text={user.total_stores}
         loading={loading}
         titleTestId="total-stores-title"
-        textTextId="total-stores-quantity"
+        textTestId="total-stores-quantity"
       />
       <Card
         title="Faturamento Total"
@@ -21,14 +21,14 @@ function MainCards() {
         text={user.total_revenues}
         loading={loading}
         titleTestId="total-revenues-title"
-        textTextId="total-revenues-value"
+        textTestId="total-revenues-value"
       />
       <Card
         title="Loja Destaque"
         text={user.highlighted_store}
         loading={loading}
         titleTestId="highlighted-store-title"
-        textTextId="highlighted-store-name"
+        textTestId="highlighted-store-name"
       />
       <Card
         title="Meta Mensal"
@@ -36,7 +36,7 @@ function MainCards() {
         text={user.monthly_goal}
         loading={loading}
         titleTestId="monthly-goal-title"
-        textTextId="monthly-goal-value"
+        textTestId="monthly-goal-value"
       />
     </section>
   );
