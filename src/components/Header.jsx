@@ -15,11 +15,11 @@ function Header() {
       <h1>{currentPage?.baseName}</h1>
       <div>
         <div>
-          <Search />
-          <Notifications />
+          <Search data-testid="search-icon" />
+          <Notifications data-testid="notifications-icon" />
         </div>
         <div>
-          <span>Matheus Borges</span>
+          <span data-testid="user-name">Matheus Borges</span>
           <img src={user} alt="Imagem do usuário" />
         </div>
       </div>
