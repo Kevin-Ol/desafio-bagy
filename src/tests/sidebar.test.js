@@ -151,4 +151,15 @@ describe('Verifica se sidebar redireciona para rotas corretas', () => {
     const { pathname: mainPathname } = history.location;
     expect(mainPathname).toBe('/dashboard/main');
   });
+
+  it('Existe o botão de logout', async () => {
+    renderWithRouter(<App />);
+
+    await waitFor(() => {
+      expect(screen.queryByText("Carregando")).toBe(null);
+    });
+
+    const button = screen.getByRole('button', {name: /Sair/i});
+    expect(button).toBeInTheDocument();
+  });
 });
