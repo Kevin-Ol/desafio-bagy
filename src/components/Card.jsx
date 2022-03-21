@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 function Card({
-  title, text, currency, loading,
+  title, text, currency, loading, titleTestId, textTextId,
 }) {
   const convertBRL = useCallback((price) => price.toLocaleString('pt-br', {
     style: 'currency',
@@ -19,8 +19,8 @@ function Card({
 
   return (
     <div>
-      <h2>{title}</h2>
-      <p>
+      <h2 data-testid={titleTestId}>{title}</h2>
+      <p data-testid={textTextId}>
         {currency ? convertBRL(parseFloat(text)) : text }
       </p>
     </div>
@@ -32,6 +32,8 @@ export default Card;
 Card.defaultProps = {
   currency: false,
   text: '',
+  titleTestId: '',
+  textTextId: '',
 };
 
 Card.propTypes = {
@@ -42,4 +44,6 @@ Card.propTypes = {
   ]),
   currency: PropTypes.bool,
   loading: PropTypes.bool.isRequired,
+  titleTestId: PropTypes.string,
+  textTextId: PropTypes.string,
 };

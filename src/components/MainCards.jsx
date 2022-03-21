@@ -8,10 +8,36 @@ function MainCards() {
 
   return (
     <section className="main-cards">
-      <Card title="Total de Lojas" text={user.total_stores} loading={loading} />
-      <Card title="Faturamento Total" currency text={user.total_revenues} loading={loading} />
-      <Card title="Loja Destaque" text={user.highlighted_store} loading={loading} />
-      <Card title="Meta Mensal" currency text={user.monthly_goal} loading={loading} />
+      <Card
+        title="Total de Lojas"
+        text={user.total_stores}
+        loading={loading}
+        titleTestId="total-stores-title"
+        textTextId="total-stores-quantity"
+      />
+      <Card
+        title="Faturamento Total"
+        currency
+        text={user.total_revenues}
+        loading={loading}
+        titleTestId="total-revenues-title"
+        textTextId="total-revenues-value"
+      />
+      <Card
+        title="Loja Destaque"
+        text={user.highlighted_store}
+        loading={loading}
+        titleTestId="highlighted-store-title"
+        textTextId="highlighted-store-name"
+      />
+      <Card
+        title="Meta Mensal"
+        currency
+        text={user.monthly_goal}
+        loading={loading}
+        titleTestId="monthly-goal-title"
+        textTextId="monthly-goal-value"
+      />
     </section>
   );
 }
