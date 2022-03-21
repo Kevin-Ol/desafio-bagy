@@ -25,28 +25,32 @@ function SellsTable() {
     <main className="sells-table">
       <div>
         <div>
-          <h2>Total de Compras</h2>
-          <p>
+          <h2 data-testid="sells-title">Total de Compras</h2>
+          <p data-testid="sells-total-value">
             Valor geral:
             {' '}
             {convertBRL(totalPrice)}
           </p>
         </div>
-        <select value={period} onChange={({ target }) => setPeriod(target.value)}>
+        <select
+          value={period}
+          onChange={({ target }) => setPeriod(target.value)}
+          data-testid="sells-select-period"
+        >
           <option value="weekly">Semanal</option>
           <option value="monthly">Mensal</option>
         </select>
       </div>
       <ul>
-        {sells.map((sell) => (
+        {sells.map((sell, index) => (
           <li key={sell.id}>
-            <span>{sell.store_name}</span>
-            <span>
+            <span data-testid={`sells-name-${index}`}>{sell.store_name}</span>
+            <span data-testid={`sells-quantity-${index}`}>
               {sell.quantity}
               {' '}
               compras
             </span>
-            <span>{convertBRL(sell.price)}</span>
+            <span data-testid={`sells-price-${index}`}>{convertBRL(sell.price)}</span>
           </li>
         ))}
       </ul>
