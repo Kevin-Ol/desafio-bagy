@@ -26,23 +26,25 @@ function ProductsTable() {
   return (
     <main className="products-table">
       <div>
-        <span>Produto</span>
-        <span>Loja</span>
-        <span>Preço</span>
-        <span>Data</span>
+        <span data-testid="products-category-0">Produto</span>
+        <span data-testid="products-category-1">Loja</span>
+        <span data-testid="products-category-2">Preço</span>
+        <span data-testid="products-category-3">Data</span>
       </div>
       <ul>
-        {products.map((product) => {
+        {products.map((product, index) => {
           const productDate = new Date(product.date);
 
           return (
             <li key={product.id}>
-              <span>{`${product.product_name} #${product.product_code}`}</span>
-              <span>
+              <span data-testid={`products-name-${index}`}>
+                {`${product.product_name} #${product.product_code}`}
+              </span>
+              <span data-testid={`products-store-${index}`}>
                 {product.store_name}
               </span>
-              <span>{convertBRL(product.unit_price)}</span>
-              <span>{convertDate(productDate)}</span>
+              <span data-testid={`products-price-${index}`}>{convertBRL(product.unit_price)}</span>
+              <span data-testid={`products-date-${index}`}>{convertDate(productDate)}</span>
             </li>
           );
         })}
