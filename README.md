@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Desafio Bagy
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![bagy](https://user-images.githubusercontent.com/82068881/159203850-3dc21f65-9903-458a-8d44-21d9be2cab12.png)
 
-## Available Scripts
+Aplicação desenvolvida em ReactJS para o desafio técnico do processo seletivo de Pessoa Desenvolvedora Front-End na empresa Bagy. Foi desenvolvida uma 
+página de dashboard com uma sidebar navegável que renderiza informações de várias lojas, tendo seus dados fornecidos por um [GraphQL fake server](https://github.com/marmelab/json-graphql-server), mostrando informações sobre destaque de loja, faturamento total, últimas vendas e um gráfico mensal de faturamento.
 
-In the project directory, you can run:
+Você pode acessar a aplicação localmente através do clone do repositório, seguindo os passos a seguir:
 
-### `npm start`
+## Instruções para reproduzir o projeto localmente
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone o repositório
+  * `git@github.com:Kevin-Ol/desafio-bagy.git`.
+  * Entre na pasta do repositório que você acabou de clonar:
+    * `cd desafio-bagy`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Instale as dependências
+  * `npm install`
 
-### `npm test`
+3. Inicie o fake-server
+  * `npm run db`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. Inicie o projeto
+  * `npm start`
 
-### `npm run build`
+5. O fake-server será iniciado na porta 3001 enquanto a aplicação iniciará na porta 3000:
+  * `http://localhost:3000/`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Scripts do projeto
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `npm start` inicia a aplicação localmente;
+- `npm run db` inicia o fake-server;
+- `npm test` inicia os arquivos de teste da aplicação;
+- `npm run test:coverage` realiza os testes da aplicação gerando um relatório de cobertura;
 
-### `npm run eject`
+## Bibliotecas utilizadas
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- `eslint` para garantir padronização do código;
+- `json-graphql-server` para rodar um servidor backend simples localmente;
+- `axios` para comunicação com o back-end;
+- `recharts` para gerar gráficos;
+- `sass` pré-processador css;
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contato
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Email: kevin.zero@hotmail.com
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Github: https://github.com/kevin-ol
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+LinkedIn: https://www.linkedin.com/in/kevinmendoncaoliveira/
