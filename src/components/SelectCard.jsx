@@ -14,8 +14,8 @@ function SelectCard({
 
   return (
     <div>
-      <h2 data-testid={titleTestId}>{title}</h2>
-      <select value={value} onChange={handleChange} data-testid={selectTestId}>
+      <label htmlFor={title} data-testid={titleTestId}>{title}</label>
+      <select id={title} value={value} onChange={handleChange} data-testid={selectTestId}>
         {options.map((option) => <option value={option} key={option}>{option}</option>)}
       </select>
     </div>

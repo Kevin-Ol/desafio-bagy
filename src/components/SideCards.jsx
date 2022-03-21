@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from './Card';
 import SelectCard from './SelectCard';
 import UseStores from '../hooks/UseStores';
@@ -12,13 +12,16 @@ function SideCards() {
   const monthOptions = ['Julho', 'Junho'];
   const yearOptions = [2020, 2019];
 
+  const [month, setMonth] = useState(monthOptions[0]);
+  const [year, setYear] = useState(yearOptions[0]);
+
   return (
     <section className="side-cards">
       <SelectCard
         title="Loja"
         options={storesNamesList}
-        handleChange={changeStoreName}
         loading={loading}
+        handleChange={changeStoreName}
         value={currentStoreName}
         titleTestId="store-title"
         selectTestId="select-store"
@@ -27,6 +30,8 @@ function SideCards() {
         title="Mês"
         options={monthOptions}
         loading={loading}
+        value={month}
+        handleChange={({ target }) => setMonth(target.value)}
         titleTestId="month-title"
         selectTestId="select-month"
       />
@@ -34,6 +39,8 @@ function SideCards() {
         title="Ano"
         options={yearOptions}
         loading={loading}
+        value={year}
+        handleChange={({ target }) => setYear(target.value)}
         titleTestId="year-title"
         selectTestId="select-year"
       />
